@@ -38,8 +38,6 @@ class _InputPageState extends State<InputPage> {
   }
 
   //these stay in this class
-  double _min = 0;
-  double _max = 100;
   final int divisionsNum = 20;
 
   @override
@@ -71,7 +69,8 @@ class _InputPageState extends State<InputPage> {
                         style: kLabelTextStyle,
                       ),
                       Text(
-                        weeklyBudget.toString(),
+                        (diningTotal + transportTotal + entertainTotal)
+                            .toString(),
                         style: kNumberTextStyle,
                       )
                     ],
@@ -112,7 +111,7 @@ class _InputPageState extends State<InputPage> {
                               saveDiningPref(dining);
                             });
                           }),
-                      SizedBox(width: 10.0),
+                      SizedBox(width: 15.0),
                       Text(
                         '\$ ',
                         style: kLabelTextStyle,
@@ -121,7 +120,7 @@ class _InputPageState extends State<InputPage> {
                         diningTotal.toString(),
                         style: kNumberTextStyle,
                       ),
-                      SizedBox(width: 10.0),
+                      SizedBox(width: 15.0),
                       RoundIconButton(
                         icon: FontAwesomeIcons.plus,
                         onPressed: () {
@@ -181,7 +180,7 @@ class _InputPageState extends State<InputPage> {
                               saveDiningPref(dining);
                             });
                           }),
-                      SizedBox(width: 10.0),
+                      SizedBox(width: 15.0),
                       Text(
                         '\$ ',
                         style: kLabelTextStyle,
@@ -190,7 +189,7 @@ class _InputPageState extends State<InputPage> {
                         transportTotal.toString(),
                         style: kNumberTextStyle,
                       ),
-                      SizedBox(width: 10.0),
+                      SizedBox(width: 15.0),
                       RoundIconButton(
                         icon: FontAwesomeIcons.plus,
                         onPressed: () {
@@ -250,7 +249,7 @@ class _InputPageState extends State<InputPage> {
                               saveDiningPref(dining);
                             });
                           }),
-                      SizedBox(width: 10.0),
+                      SizedBox(width: 15.0),
                       Text(
                         '\$ ',
                         style: kLabelTextStyle,
@@ -259,7 +258,7 @@ class _InputPageState extends State<InputPage> {
                         entertainTotal.toString(),
                         style: kNumberTextStyle,
                       ),
-                      SizedBox(width: 10.0),
+                      SizedBox(width: 15.0),
                       RoundIconButton(
                         icon: FontAwesomeIcons.plus,
                         onPressed: () {
@@ -290,9 +289,11 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonTitle: 'SET',
             onTap: () {
+              weeklyBudget = diningTotal + transportTotal + entertainTotal;
               saveEntertainPref(entertainTotal);
               saveTransportPref(transportTotal);
               saveDiningPref(diningTotal);
+              saveWeeklyBudgetPref(weeklyBudget);
               var route = new MaterialPageRoute(
                 builder: (BuildContext context) =>
                     new ResultsPage(value: User()),

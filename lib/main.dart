@@ -17,6 +17,7 @@ class BudgetApp extends StatelessWidget {
     int dining = 40;
     int transport = 20;
     int entertain = 20;
+
     return new MaterialApp(
       theme: ThemeData.dark().copyWith(
         primaryColor: Color(0xFF0A0E21),

@@ -1,7 +1,6 @@
 import 'package:budget_app_two_point_oh/main.dart';
 import 'package:flutter/material.dart';
-import 'package:budget_app_two_point_oh/constants.dart';
-import 'package:budget_app_two_point_oh/components/round_icon_button.dart';
+import 'package:budget_app_two_point_oh/components/resultspage_icon_button.dart';
 import 'package:budget_app_two_point_oh/screens/spent_input_page.dart';
 import 'package:budget_app_two_point_oh/screens/input_page.dart';
 import 'package:budget_app_two_point_oh/Costs.dart';
@@ -111,10 +110,6 @@ class _ResultsPageState extends State<ResultsPage> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 70.0),
-//                  SafeArea(
-//
-//                  ),
                     SizedBox(
                       width: 10.0,
                     ),
@@ -149,7 +144,7 @@ class _ResultsPageState extends State<ResultsPage> {
               Row(
                 children: <Widget>[
                   Expanded(
-                      child: RoundIconButton(
+                      child: RoundIconButtonTwo(
                     icon: Icons.settings,
                     onPressed: () {
                       var route = new MaterialPageRoute(
@@ -160,12 +155,12 @@ class _ResultsPageState extends State<ResultsPage> {
                     },
                   )),
                   Expanded(
-                      child: RoundIconButton(
+                      child: RoundIconButtonTwo(
                     icon: Icons.add,
                     onPressed: () {
                       var route = new MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            new SpentPage(value: User()),
+                            new SpentPage(value: User(selectedValue: dining)),
                       );
                       Navigator.of(context).push(route);
                     },

@@ -37,6 +37,7 @@ class _SpentPageState extends State<SpentPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -102,7 +103,7 @@ class _SpentPageState extends State<SpentPage> {
                   SizedBox(height: 10.0),
                   Text('Enter Amount :'),
                   TextField(
-                    onChanged: (userInputWeeklyBudget) {
+                    onSubmitted: (userInputWeeklyBudget) {
                       setState(() {
                         if (_value == 0) {
                           //subtract from dining
@@ -131,43 +132,8 @@ class _SpentPageState extends State<SpentPage> {
                     keyboardType: TextInputType.number,
                   ),
                   SizedBox(height: 10.0),
-                  Column(
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
-                        textBaseline: TextBaseline.alphabetic,
-                        children: <Widget>[
-                          Text(
-                            'Weekly Budget: \$',
-                            style: kLabelTextStyle,
-                          ),
-                          Text(
-                            weeklyBudget.toString(),
-                            style: kNumberTextStyle,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
-                        textBaseline: TextBaseline.alphabetic,
-                        children: <Widget>[
-                          Text(
-                            selectedCategory + ': \$',
-                            style: kLabelSmallTextStyle,
-                          ),
-                          Text(
-                            selectedValue.toString(),
-                            style: kNumberSmallTextStyle,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.0),
                   BottomButton(
-                    buttonTitle: 'SAVE',
+                    buttonTitle: 'HOME',
                     onTap: () {
                       // A MaterialPageRoute is a  modal route that replaces the entire screen
                       // with a platform-adaptive transition.

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed});
+class RoundIconButtonTwo extends StatelessWidget {
+  RoundIconButtonTwo({@required this.icon, @required this.onPressed});
 
   final IconData icon;
   final Function onPressed;
@@ -14,8 +14,8 @@ class RoundIconButton extends StatelessWidget {
       child: Icon(icon),
       onPressed: onPressed,
       constraints: BoxConstraints.tightFor(
-        width: 40.0,
-        height: 40.0,
+        width: 60.0,
+        height: 60.0,
       ),
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
