@@ -15,13 +15,13 @@ class ResultsPage extends StatefulWidget {
 }
 
 class _ResultsPageState extends State<ResultsPage> {
-  int weeklyBudget = 0;
-  int diningTotal = 0;
-  int transportTotal = 0;
-  int entertainTotal = 0;
-  int dining = 0;
-  int transport = 0;
-  int entertain = 0;
+  int weeklyBudget = 0,
+      diningTotal = 0,
+      transportTotal = 0,
+      entertainTotal = 0,
+      dining = 0,
+      transport = 0,
+      entertain = 0;
   String color = "";
   double _categoryFontSize = 25.0;
 
@@ -47,6 +47,7 @@ class _ResultsPageState extends State<ResultsPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('MY BUDGET'),
+          backgroundColor: Colors.blueGrey,
         ),
         body: Container(
           child: Column(
@@ -175,12 +176,15 @@ class _ResultsPageState extends State<ResultsPage> {
   //return the color in proportion to amt/total
   int checkColor(int category, int total) {
     int color;
-    if (category < total / 3)
-      //red
-      color = 0xFFFF1744;
+    if (category < total / 3 && category >= 0)
+      //orange
+      color = 0xFFFF4500;
     else if (category > total / 3 && category < (total / 3) * 2)
       //yellow
       color = 0xFFFFEA00;
+    else if (category < 0)
+      //red
+      color = 0xFFFF1744;
     else
       //green
       color = 0xFF00E676;

@@ -45,6 +45,7 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('SETTINGS'),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

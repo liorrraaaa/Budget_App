@@ -10,19 +10,15 @@ void main() => runApp(BudgetApp());
 class BudgetApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    int weeklyBudget = 60;
-    int diningTotal = 40;
-    int transportTotal = 20;
-    int entertainTotal = 20;
-    int dining = 40;
-    int transport = 20;
-    int entertain = 20;
+    int weeklyBudget = 60,
+        diningTotal = 40,
+        transportTotal = 20,
+        entertainTotal = 20,
+        dining = 40,
+        transport = 20,
+        entertain = 20;
 
     return new MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF0A0E21),
-        scaffoldBackgroundColor: Color(0xFF0A0E21),
-      ),
       home: ResultsPage(
           value: User(
               weeklyBudget: weeklyBudget,
